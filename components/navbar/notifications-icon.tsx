@@ -6,10 +6,17 @@ interface NotificationsIconProps {
     className?: string;
 }
 export default function NotificationsIcon({ count, className }: NotificationsIconProps) {
-
+    className = clsx(
+        className,
+        count === 0 ? 'cursor-not-allowed text-gray-600' : 'cursor-pointer hover:text-white text-gray-400'
+    )
     return (
         <button
-            className={clsx('relative flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800', className)}
+            aria-disabled={count === 0}
+            aria-label="Notifications"
+            className={clsx('relative flex-shrink-0 rounded-full bg-gray-800 p-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800', className)}
+            disabled={count === 0}
+            role={'button'}
             type="button">
             <span className="absolute -inset-1.5" />
             <span className="sr-only">View notifications</span>

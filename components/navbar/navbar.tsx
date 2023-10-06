@@ -72,7 +72,7 @@ export default function Navbar() {
                             </div>
                             <div className="hidden lg:ml-4 lg:block">
                                 <div className="flex items-center">
-                                    <NotificationsIcon count={3} />
+                                    <NotificationsIcon count={0} />
 
                                     {/* Profile dropdown */}
                                     <Menu as="div" className="relative ml-4 flex-shrink-0">
