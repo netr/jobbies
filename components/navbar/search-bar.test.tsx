@@ -1,5 +1,5 @@
 import { fireEvent, render } from '@testing-library/react'
-import SearchBar from '@/components/search-bar'
+import SearchBar from '@/components/navbar/search-bar'
 
 describe('Render', () => {
     it('should render without crashing', () => {

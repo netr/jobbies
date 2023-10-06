@@ -1,13 +1,15 @@
 import { BellIcon } from '@heroicons/react/24/outline'
+import { clsx } from 'clsx'
 
 interface NotificationsIconProps {
     count: number;
+    className?: string;
 }
-export default function NotificationsIcon({ count }: NotificationsIconProps) {
+export default function NotificationsIcon({ count, className }: NotificationsIconProps) {
 
     return (
         <button
-            className="relative flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+            className={clsx('relative flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800', className)}
             type="button">
             <span className="absolute -inset-1.5" />
             <span className="sr-only">View notifications</span>

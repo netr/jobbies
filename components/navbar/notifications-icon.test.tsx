@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import React from 'react'
-import NotificationsIcon from '@/components/notifications-icon'
+import NotificationsIcon from '@/components/navbar/notifications-icon'
 
 describe('Render', () => {
     it('should render without crashing', () => {

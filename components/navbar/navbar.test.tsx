@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import Navbar from '@/components/navbar'
+import Navbar from '@/components/navbar/navbar'
 
 
 describe('Render', () => {
