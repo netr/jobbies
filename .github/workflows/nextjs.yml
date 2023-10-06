@@ -17,11 +17,6 @@ concurrency:
 
 jobs:
   build-and-test:
-    strategy:
-      matrix:
-        node-version: [14, 16]
-      fail-fast: true
-
     runs-on: ubuntu-latest
 
     steps:
