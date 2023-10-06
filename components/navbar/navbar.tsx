@@ -2,12 +2,12 @@
 
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { clsx } from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import SearchBar from '@/components/search-bar'
+import { NotificationsIcon, SearchBar } from '@/components/navbar'
 
 interface NavigationItem {
     name: string
@@ -72,18 +72,7 @@ export default function Navbar() {
                             </div>
                             <div className="hidden lg:ml-4 lg:block">
                                 <div className="flex items-center">
-                                    <button
-                                        className="relative flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                                        type="button">
-                                        <span className="absolute -inset-1.5" />
-                                        <span className="sr-only">View notifications</span>
-                                        <BellIcon aria-hidden="true" className="h-6 w-6" />
-
-                                        {/* Notification badge */}
-                                        <span className="absolute text-xs bg-red-500 text-white rounded-full w-4 h-4 top-0 right-0 flex items-center justify-center">
-                                            3    {/* number should be replaced dynamically */}
-                                        </span>
-                                    </button>
+                                    <NotificationsIcon count={0} />
 
                                     {/* Profile dropdown */}
                                     <Menu as="div" className="relative ml-4 flex-shrink-0">
@@ -159,13 +148,7 @@ export default function Navbar() {
                                     <div className="text-base font-medium text-white">Tom Cook</div>
                                     <div className="text-sm font-medium text-gray-400">tom@example.com</div>
                                 </div>
-                                <button
-                                    className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                                    type="button">
-                                    <span className="absolute -inset-1.5" />
-                                    <span className="sr-only">View notifications</span>
-                                    <BellIcon aria-hidden="true" className="h-6 w-6" />
-                                </button>
+                                <NotificationsIcon className={'ml-auto'} count={3} />
                             </div>
                             <div className="mt-3 space-y-1 px-2">
                                 {profileNavigation.map((item) => (
